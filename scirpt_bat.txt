@@ -1,0 +1,18 @@
+SET link1=start chrome.exe --guest --start-fullscreen ""
+SET link2=start chrome.exe --guest --start-fullscreen ""
+SET link3=start chrome.exe --guest --start-fullscreen ""  
+
+SET /p escolha=Escolha de 1 até 3: 
+
+if "%escolha%"=="1" (
+  %link1%
+)
+if "%escolha%"=="2" (
+  %link2%
+)
+if "%escolha%"=="3" (
+  %link3%
+)
+
+taskkill /im ms-teams.exe /f
+taskkill /im explorer.exe /f
