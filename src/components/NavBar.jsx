@@ -26,22 +26,22 @@ export function NavBar() {
             </li>
             <li className="p-5 xl:p-8">
               <Link to="/about" className="hover:text-blue-400 transition-colors">
-                About
+                Sobre 
               </Link>
             </li>
             <li className="p-5 xl:p-8">
               <Link to="/suport" className="hover:text-blue-400 transition-colors">
-                Support
+                Professores
               </Link>
             </li>
             <li className="p-5 xl:p-8">
               <Link to="/products" className="hover:text-blue-400 transition-colors">
-                Services
+                Disciplinas
               </Link>
             </li>
             <li className="p-5 xl:p-8">
               <Link to="/blog" className="hover:text-blue-400 transition-colors">
-                Blog
+                Reservas
               </Link>
             </li>
           </ul>
