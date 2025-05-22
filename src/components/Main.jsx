@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom';
 
 export function Main() {
 
-    const name = 'Joao';
+    const name = localStorage.getItem('nome');
+
     return (
         <>
             <main className="flex flex-col items-center justify-center min-h-[80vh] bg-gray-200 px-4">
-                {/* <div className="flex flex-col items-start">
-    <h1 className="text-2xl font-bold">Olá {name}</h1>
-  </div> */}
+                <div className="flex flex-col items-start">
+                    <h1 className="text-2xl font-bold">Olá {name}</h1>
+                </div>
 
                 <div className="w-full max-w-screen-xl">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8">

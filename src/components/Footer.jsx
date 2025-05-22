@@ -10,11 +10,9 @@ export function Footer(){
                     <img src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" className="h-8 w-auto sm:h-10" />
                 </a>
                     <ul className="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200 hoover-text-blue-400">
-                        <li><a href="#" className="text-gray-800 hover:text-gray-900">About Us</a></li>
-                        <li><a href="#" className=" text-gray-800 hover:text-gray-900">Products</a></li>
+                        <li><a href="#" className="text-gray-800 hover:text-gray-900">Sobre nós</a></li>
+                        <li><a href="#" className=" text-gray-800 hover:text-gray-900">Home</a></li>
                         <li><a href="#" className=" text-gray-800 hover:text-gray-900">Resources</a></li>
-                        <li><a href="#" className=" text-gray-800 hover:text-gray-900">Blogs</a></li>
-                        <li><a href="#" className=" text-gray-800 hover:text-gray-900">Support</a></li>
                     </ul>
                     <div class="flex space-x-10 justify-center items-center mb-14">
                         {/* X Svg */}

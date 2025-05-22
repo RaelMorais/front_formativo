@@ -1,6 +1,77 @@
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 export function LoginReact() {
+    const schemaLogin = z.object({
+    username: z.string()
+    .min(1, 'Informe seu usuario')
+    .max(30, 'Informe no maximo 30 caracteres'), 
+    password: z.string()
+    .min(1, 'Informe a senha')
+    .max(55, 'Informe no maximo 55 caracteres')
+
+    });
+
+    
+    const{
+        register,
+        handleSubmit, 
+        formState: {errors}
+    }=useForm(
+        {resolver: zodResolver(schemaLogin)}
+    );
+    async function ObterDados(data) {
+        console.log(data)
+
+        try {
+    const response = await axios.post('http://127.0.0.1:8000/token/', {
+      username: data.username,
+      password: data.password,
+    });
+
+    console.log(response.data); // veja a estrutura da resposta
+
+    const { access, refresh, user } = response.data;
+
+    localStorage.setItem('access_token', access);
+    localStorage.setItem('refresh_token', refresh);
+    localStorage.setItem('nome', data.username);
+
+    // Verifique se 'user' existe antes de usar
+    // if (user && user.cargo) {
+    //   localStorage.setItem('tipo', user.cargo);
+    // }
+
+    console.log('Login realizado');
+  } catch (error) {
+    console.log('Deu ruim', error);
+    alert('Dados inválidos');
+  }
+        try{
+            const response = await axios.post('http://127.0.0.1:8000/token/', {
+                username: data.username, 
+                password: data.password
+            });
+
+            console.log(response.data); 
+            const {access, refresh, usuario} = response.data;
+
+            localStorage.setItem('access_token', access)
+            localStorage.setItem('refresh_token', refresh)
+            localStorage.setItem('tipo', usuario.cargo)
+            localStorage.setItem('nome', usuario.username)
+
+            console.log('Login realizado')
+        }catch(error){
+            console.log('Deu ruim', error);
+            alert('Dados inválidos')
+        }
+    }
+
+    
     return (
         <>
             {/* component */}
@@ -17,19 +88,22 @@ export function LoginReact() {
                 {/* Right: Login Form */}
                 <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
                     <h1 className="text-6xl font-semibold mb-4 text-center">Educar</h1>
-                    <form action="#" method="POST">
+                    <form action="#" method="POST" onSubmit={handleSubmit(ObterDados)}>
                         {/* Username Input */}
                         <div className="mb-4">
                             <label htmlFor="username" className="block text-gray-600">
                                 Username
                             </label>
                             <input
+                                {...register('username')}
+                                placeholder='Ex. João'
                                 type="text"
                                 id="username"
                                 name="username"
                                 className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
                                 autoComplete="off"
                             />
+                            {errors.username && <p>{errors.username.message}</p>}
                         </div>
 
                         {/* Password Input */}
@@ -38,31 +112,27 @@ export function LoginReact() {
                                 Password
                             </label>
                             <input
+                                {...register('password')}
+                                placeholder='Ex. SuaSenha'
                                 type="password"
                                 id="password"
                                 name="password"
                                 className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
                                 autoComplete="off"
                             />
+                            {errors.pasword && <p>{errors.pasword.message}</p>}
                         </div>
 
                         {/* Login Button */}
-                        <Link to="/home">
+                        {/* <Link to="/home"> */}
                         <button
                             type="submit"
                             className="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
                         >
                             Login
                         </button>
-                        </Link>
+                        {/* </Link> */}
                     </form>
-
-                    {/* Sign up
-                    <div className="mt-6 text-green-500 text-center">
-                        <Link to="/signup" className="hover:underline">
-                            Sign up Here
-                        </Link>
-                    </div> */}
                 </div>
             </div>
         </>

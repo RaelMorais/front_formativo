@@ -23,7 +23,7 @@ export function SectionAbout() {
   <div className="flex-1 flex flex-col justify-center p-4">
     <h2 className="text-3xl font-bold mb-4">Sobre nós</h2>
     <p className="text-lg">
-      Projeto desenvolvido por Israel Santana para máteria de Programação FrontEnd no Senai 'Roberto Mange'
+      Projeto desenvolvido por Israel Santana para máteria de Programação FrontEnd no Senai 'Roberto Mange'.
     </p>
   </div>
 
