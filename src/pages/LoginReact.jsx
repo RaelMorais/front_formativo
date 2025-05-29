@@ -3,8 +3,10 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useNavigate } from 'react-router-dom';
 
 export function LoginReact() {
+    const navigate = useNavigate(); // ✅ useNavigate hook
     const schemaLogin = z.object({
     username: z.string()
     .min(1, 'Informe seu usuario')
@@ -44,33 +46,13 @@ export function LoginReact() {
     // if (user && user.cargo) {
     //   localStorage.setItem('tipo', user.cargo);
     // }
-
+    navigate('/home'); // ✅ redireciona após login
     console.log('Login realizado');
   } catch (error) {
     console.log('Deu ruim', error);
     alert('Dados inválidos');
   }
-        try{
-            const response = await axios.post('http://127.0.0.1:8000/token/', {
-                username: data.username, 
-                password: data.password
-            });
-
-            console.log(response.data); 
-            const {access, refresh, usuario} = response.data;
-
-            localStorage.setItem('access_token', access)
-            localStorage.setItem('refresh_token', refresh)
-            localStorage.setItem('tipo', usuario.cargo)
-            localStorage.setItem('nome', usuario.username)
-
-            console.log('Login realizado')
-        }catch(error){
-            console.log('Deu ruim', error);
-            alert('Dados inválidos')
-        }
-    }
-
+}
     
     return (
         <>
@@ -87,7 +69,7 @@ export function LoginReact() {
 
                 {/* Right: Login Form */}
                 <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-                    <h1 className="text-6xl font-semibold mb-4 text-center">Educar</h1>
+                    <h1 className="text-6xl font-semibold mb-4 text-center">Smart<span>Tech</span></h1>
                     <form action="#" method="POST" onSubmit={handleSubmit(ObterDados)}>
                         {/* Username Input */}
                         <div className="mb-4">

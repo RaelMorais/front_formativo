@@ -8,21 +8,26 @@ import { Layout } from '../pages/Layout';
 import { About } from '../components/pagesComponents/About';
 import { Suport } from '../components/pagesComponents/Suport';
 import { Salas } from '../components/pagesComponents/Salas';
-
+import { PrivateRoute } from './PrivateRoute';
+import { DisciplineProfessor } from '../pages/DisciplineDirector';
+import { DisciplineDirector } from '../pages/DisciplineProfessor';
 export function RoutesReact() {
   return (
-     <Routes>
-      {/* Login fora do layout */}
-      <Route path="/login" element={<LoginReact />} />
+      <Routes>
+        {/* Página de login fora do layout */}
+        <Route path="/" element={<LoginReact />} />
 
-      {/* Rotas que usam o Layout */}
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} /> {/* Sobre nós */}
-        <Route path="/suport" element={<Suport />} /> {/* Disciplinas */}
-        <Route path="/Salas" element={<Salas />} /> {/* Salas */}
-      </Route>
-    </Routes>
+        {/* Rotas protegidas com layout */}
+        <Route element={<PrivateRoute />}>
+          <Route element={<Layout />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/suport" element={<Suport />} />
+            <Route path="/salas" element={<Salas />} />
+            <Route path='/disciplina' element={<DisciplineProfessor/>}/>
+            <Route path='/dis' element={<DisciplineDirector/>}/>
+          </Route>
+        </Route>
+      </Routes>
   );
 }

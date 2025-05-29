@@ -1,10 +1,20 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, } from 'react';
 import { Menu, X } from 'lucide-react'; // ícones do Lucide (você pode usar Heroicons ou outro também)
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
+  function Logout(){
+
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+    localStorage.removeItem('nome');
+    localStorage.removeItem('tipo');
+    
+    navigate('/');
+  }
   return (
     <header className="bg-white/90 text-black shadow-lg">
       <div className="container mx-auto flex items-center justify-between h-24 px-4">
@@ -52,7 +62,9 @@ export function NavBar() {
 
         {/* Botão Logout - desktop */}
         <div className="hidden md:block">
-          <button className="rounded-full font-bold px-8 py-2 hover:bg-red-700 hover:text-white transition">
+          <button 
+          className="rounded-full font-bold px-8 py-2 hover:bg-red-700 hover:text-white transition"
+          onClick={Logout}>
             Logout
           </button>
         </div>
