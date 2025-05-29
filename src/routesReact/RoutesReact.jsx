@@ -10,7 +10,6 @@ import { Suport } from '../components/pagesComponents/Suport';
 import { Salas } from '../components/pagesComponents/Salas';
 import { PrivateRoute } from './PrivateRoute';
 import { DisciplineProfessor } from '../pages/DisciplineDirector';
-import { DisciplineDirector } from '../pages/DisciplineProfessor';
 export function RoutesReact() {
   return (
       <Routes>
@@ -25,7 +24,6 @@ export function RoutesReact() {
             <Route path="/suport" element={<Suport />} />
             <Route path="/salas" element={<Salas />} />
             <Route path='/disciplina' element={<DisciplineProfessor/>}/>
-            <Route path='/dis' element={<DisciplineDirector/>}/>
           </Route>
         </Route>
       </Routes>
