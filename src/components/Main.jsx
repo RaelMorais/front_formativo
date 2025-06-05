@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 export function Main() {
 
     const name = localStorage.getItem('nome');
+    const tipo = localStorage.getItem('cargo'); 
 
+
+    const linkDisciplina = tipo === 'P' ? '/disciplina' : '/disc';   
     return (
         <>
             <main className="flex flex-col items-center justify-center min-h-[80vh] bg-gray-200 px-4">
@@ -41,7 +44,7 @@ export function Main() {
                         </div>
                         </Link>
                         
-                        <Link to = '#'>
+                        <Link to = {linkDisciplina}>
                         <div className="bg-white text-gray-800 shadow-lg rounded-2xl p-8 flex flex-col items-center justify-center text-center text-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-purple-100 hover:shadow-2xl cursor-pointer h-56">
                             <svg className="w-12 h-12 text-purple-600 mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 12V6m0 6v6m0 0H7a2 2 0 01-2-2V6a2 2 0 012-2h5m0 12h5a2 2 0 002-2V6a2 2 0 00-2-2h-5" />

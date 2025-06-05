@@ -5,7 +5,7 @@ export function DisciplineProfessor(){
     const [disciplinas, setDisciplina] = useState([]);
     useEffect(()=>{
         const token = localStorage.getItem('access_token');
-        axios.get('http://127.0.0.1:8000/listar/disciplinas/',{
+        axios.get('http://127.0.0.1:8000/disciplinas/',{
             headers:{
                 'Authorization':`Bearer ${token}`
             }

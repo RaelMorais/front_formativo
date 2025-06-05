@@ -36,11 +36,14 @@ export function LoginReact() {
 
     console.log(response.data); // veja a estrutura da resposta
 
-    const { access, refresh, user } = response.data;
+    const { access, refresh, usuario } = response.data;
+
 
     localStorage.setItem('access_token', access);
     localStorage.setItem('refresh_token', refresh);
-    localStorage.setItem('nome', data.username);
+    localStorage.setItem('nome', usuario.username);
+    localStorage.setItem('cargo', usuario.cargo); 
+
 
     // Verifique se 'user' existe antes de usar
     // if (user && user.cargo) {
