@@ -72,7 +72,7 @@ export function LoginReact() {
 
                 {/* Right: Login Form */}
                 <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-                    <h1 className="text-6xl font-semibold mb-4 text-center">Smart<span>Tech</span></h1>
+                    <h1 className="text-6xl font-semibold mb-4 text-center">Educar<span></span></h1>
                     <form action="#" method="POST" onSubmit={handleSubmit(ObterDados)}>
                         {/* Username Input */}
                         <div className="mb-4">

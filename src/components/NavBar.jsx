@@ -49,13 +49,13 @@ export function NavBar() {
               <Link to="/about" className="hover:text-blue-400 transition-colors">Sobre</Link>
             </li>
             <li>
-              <Link to="/suport" className="hover:text-blue-400 transition-colors">Professores</Link>
+              <Link to="/salas" className="hover:text-blue-400 transition-colors">Salas</Link>
             </li>
             <li>
-              <Link to="/products" className="hover:text-blue-400 transition-colors">Disciplinas</Link>
+              <Link to="/disc" className="hover:text-blue-400 transition-colors">Disciplinas</Link>
             </li>
             <li>
-              <Link to="/blog" className="hover:text-blue-400 transition-colors">Reservas</Link>
+              <Link to="/" className="hover:text-blue-400 transition-colors">Reservas</Link>
             </li>
           </ul>
         </nav>
@@ -81,7 +81,7 @@ export function NavBar() {
               <Link to="/about" onClick={() => setIsOpen(false)}>Sobre</Link>
             </li>
             <li>
-              <Link to="/suport" onClick={() => setIsOpen(false)}>Professores</Link>
+              <Link to="/salas" onClick={() => setIsOpen(false)}>Salas</Link>
             </li>
             <li>
               <Link to="/products" onClick={() => setIsOpen(false)}>Disciplinas</Link>

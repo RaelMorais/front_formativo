@@ -7,6 +7,9 @@ export function Main() {
 
 
     const linkDisciplina = tipo === 'P' ? '/disciplina' : '/disc';   
+    const linkProfessor = tipo === 'P' ? '/erro' : '/prof'; 
+    const linkDiretor = tipo === 'P' ? '/erro' : '/adm'; 
+
     return (
         <>
             <main className="flex flex-col items-center justify-center min-h-[80vh] bg-gray-200 px-4">
@@ -17,7 +20,7 @@ export function Main() {
                 <div className="w-full max-w-screen-xl">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
 
-                        <Link to=''>
+                        <Link to={linkProfessor}>
                         <div className="bg-white text-gray-800 shadow-lg rounded-2xl p-8 flex flex-col items-center justify-center text-center text-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-blue-100 hover:shadow-2xl cursor-pointer h-56">
                             <svg className="w-12 h-12 text-blue-600 mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H6m6 0h6" />
@@ -26,7 +29,7 @@ export function Main() {
                         </div>
                         </Link>
                         
-                        <Link to=''>
+                        <Link to={linkDiretor}>
                         <div className="bg-white text-gray-800 shadow-lg rounded-2xl p-8 flex flex-col items-center justify-center text-center text-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-green-100 hover:shadow-2xl cursor-pointer h-56">
                             <svg className="w-12 h-12 text-green-600 mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m0-6a4 4 0 118 0 4 4 0 01-8 0zm10 4a4 4 0 10-4 4h4" />
