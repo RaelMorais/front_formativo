@@ -52,7 +52,7 @@ export function NavBar() {
               <Link to="/salas" className="hover:text-blue-400 transition-colors">Salas</Link>
             </li>
             <li>
-              <Link to="/disc" className="hover:text-blue-400 transition-colors">Disciplinas</Link>
+              <Link to="/disciplinas" className="hover:text-blue-400 transition-colors">Disciplinas</Link>
             </li>
             <li>
               <Link to="/" className="hover:text-blue-400 transition-colors">Reservas</Link>

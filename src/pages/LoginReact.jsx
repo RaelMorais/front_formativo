@@ -49,7 +49,7 @@ export function LoginReact() {
     // if (user && user.cargo) {
     //   localStorage.setItem('tipo', user.cargo);
     // }
-    navigate('/home'); // ✅ redireciona após login
+    navigate('/loading'); // ✅ redireciona após login
     console.log('Login realizado');
   } catch (error) {
     console.log('Deu ruim', error);
@@ -64,7 +64,7 @@ export function LoginReact() {
                 {/* Left: Image */}
                 <div className="w-1/2 h-screen hidden lg:block">
                     <img
-                        src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWJzdHJhY3R8ZW58MHx8MHx8fDA%3D"
+                        src="https://images.unsplash.com/photo-1712916666137-0ca605eeb88c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0"
                         alt="Background"
                         className="object-cover w-full h-full"
                     />
@@ -112,7 +112,7 @@ export function LoginReact() {
                         {/* <Link to="/home"> */}
                         <button
                             type="submit"
-                            className="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
+                            className="bg-violet-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
                         >
                             Login
                         </button>

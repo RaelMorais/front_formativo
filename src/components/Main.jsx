@@ -6,7 +6,7 @@ export function Main() {
     const tipo = localStorage.getItem('cargo'); 
 
 
-    const linkDisciplina = tipo === 'P' ? '/disciplina' : '/disc';   
+    const linkDisciplina = tipo === 'P' ? '/disciplina' : '/disciplinas';   
     const linkProfessor = tipo === 'P' ? '/erro' : '/prof'; 
     const linkDiretor = tipo === 'P' ? '/erro' : '/adm'; 
 

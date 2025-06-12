@@ -12,7 +12,7 @@ export function SectionAbout() {
 
         <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-black">Desenvolvendo o futuro</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">Desenvolvendo o futuro</h1>
             <p className="text-lg md:text-xl text-gray-200">Desenvolvendo o futuro através da educação.</p>
           </div>
         </div>
