@@ -15,6 +15,7 @@ import { DisciplineProfessor } from '../pages/DisciplinasProfessores';
 import { Disciplina } from '../pages/DisciplinaPrincipal';
 import { Professores } from '../pages/Professores';
 
+import { CriarProfessor } from '../pages/CrudProfessores/CriarProfessor';
 import { DisciplinaCadastro } from '../pages/CrudDisciplinas/CadastroDisciplina';
 import { EditarDisciplina } from '../pages/CrudDisciplinas/EditarDisciplina';
 export function RoutesReact() {
@@ -37,6 +38,7 @@ export function RoutesReact() {
             <Route path='/loading' element={<PencilLoader />}/>
             <Route path='/cadastro' element={<DisciplinaCadastro/>}/>
             <Route path='/editar/:id' element={<EditarDisciplina/>}/>
+            <Route path='/professor' element={<CriarProfessor/>}/>
           </Route>
         </Route>
       </Routes>
