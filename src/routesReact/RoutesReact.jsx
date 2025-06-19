@@ -18,6 +18,9 @@ import { Professores } from '../pages/Professores';
 import { CriarProfessor } from '../pages/CrudProfessores/CriarProfessor';
 import { DisciplinaCadastro } from '../pages/CrudDisciplinas/CadastroDisciplina';
 import { EditarDisciplina } from '../pages/CrudDisciplinas/EditarDisciplina';
+import { CriarDiretor } from '../pages/CrudDiretores/CriarDiretor';
+import { EditarDiretor } from '../pages/CrudDiretores/EditarDiretores';
+import { Reservas } from '../pages/Reservas';
 export function RoutesReact() {
   return (
       <Routes>
@@ -39,6 +42,9 @@ export function RoutesReact() {
             <Route path='/cadastro' element={<DisciplinaCadastro/>}/>
             <Route path='/editar/:id' element={<EditarDisciplina/>}/>
             <Route path='/professor' element={<CriarProfessor/>}/>
+            <Route path='/diretor' element={<CriarDiretor/>}/>
+            <Route path='/editarDiretor/:id' element={<EditarDiretor/>}/>
+            <Route path='/reserva' element={<Reservas/>}/>
           </Route>
         </Route>
       </Routes>

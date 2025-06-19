@@ -5,17 +5,6 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-const estilos = {
-    conteiner: "p-4",
-    loginForm: "flex flex-col gap-2",
-    titulo: "text-xl font-bold mb-4",
-    nomeCampo: "font-semibold mt-2",
-    inputField: "border p-2 rounded",
-    error: "text-red-500 text-sm",
-    submitButton: "bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded",
-    icones: "mt-4"
-};
-
 const schemaDisciplina = z.object({
     nome: z.string().min(1, 'Informe ao menos um caractere').max(100),
     curso: z.string().min(1).max(100),
