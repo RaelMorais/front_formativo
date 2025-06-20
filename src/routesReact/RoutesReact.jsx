@@ -21,6 +21,8 @@ import { EditarDisciplina } from '../pages/CrudDisciplinas/EditarDisciplina';
 import { CriarDiretor } from '../pages/CrudDiretores/CriarDiretor';
 import { EditarDiretor } from '../pages/CrudDiretores/EditarDiretores';
 import { Reservas } from '../pages/Reservas';
+import { CriarReserva } from '../pages/CrudReserva/CriarReserva';
+import { EditarReserva } from '../pages/CrudReserva/EditarReserva';
 export function RoutesReact() {
   return (
       <Routes>
@@ -45,6 +47,8 @@ export function RoutesReact() {
             <Route path='/diretor' element={<CriarDiretor/>}/>
             <Route path='/editarDiretor/:id' element={<EditarDiretor/>}/>
             <Route path='/reserva' element={<Reservas/>}/>
+            <Route path='/reservaCriar' element={<CriarReserva/>}/>
+            <Route path='/reservaEditar/:id' element={<EditarReserva/>}/>
           </Route>
         </Route>
       </Routes>
