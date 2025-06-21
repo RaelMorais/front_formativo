@@ -9,7 +9,7 @@ de um sistema de gerenciamento escolar, capaz de realizar todas operações como
 
 Clone o projeto para sua pasta usando: 
 
-```git clone https://github.com/RaelMorais/projeto_educar_back.git```
+```git clone https://github.com/RaelMorais/projeto_educar_front.git```
 
 Depois instale as dependencia com
 
