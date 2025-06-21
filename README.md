@@ -29,7 +29,7 @@ Todo backend do projeto foi desenvolvido em Python, usando o DRF (Django Rest Fr
 
 Use: 
 
-```git clone https://github.com/RaelMorais/formativo_senai.git```
+```git clone https://github.com/RaelMorais/projeto_educar_back.git```
 
 Depois crie a venv: 
 
@@ -72,5 +72,5 @@ Então rode o projeto:
 
 python manage.py runserver
 
-Para maiores dúvidas, [link do projeto aqui](https://github.com/RaelMorais/formativo_senai).
+Para maiores dúvidas, [link do projeto aqui](https://github.com/RaelMorais/projeto_educar_back.git).
 
