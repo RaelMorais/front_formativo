@@ -9,7 +9,7 @@ de um sistema de gerenciamento escolar, capaz de realizar todas operações como
 
 Clone o projeto para sua pasta usando: 
 
-````git clone https://github.com/RaelMorais/front_formativo.git```
+```git clone https://github.com/RaelMorais/front_formativo.git```
 
 Depois instale as dependencia com
 
@@ -19,7 +19,7 @@ E então rode o projeto com
 
 ```npm run dev```
 
-Acesse: Local:   http://localhost:5173/
+Acesse: Local:  http://localhost:5173/
 
 # 🛠️ Backend 
 
