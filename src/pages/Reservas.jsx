@@ -58,13 +58,13 @@ export function Reservas() {
       <div className="p-6">
         <h2 className="text-2xl font-bold mb-6">Reservas de Ambiente</h2>
 
-        <Link to="/reserva/criar">
+        <Link to="/criar-reserva">
           <Plus className="w-10 h-10 text-black-500 hover:text-blue-700 transition" />
         </Link>
 
         <br />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reservas.map((r) => (
             <div
               key={r.id}
@@ -75,7 +75,7 @@ export function Reservas() {
                   className="w-7 h-7 text-red-500 hover:text-red-700 transition cursor-pointer"
                   onClick={() => handleDelete(r.id)}
                 />
-                <Link to={`/reservaEditar/${r.id}`}>
+                <Link to={`/editar-reserva/${r.id}`}>
                   <Edit className="w-7 h-7 text-blue-500 hover:text-blue-700 transition cursor-pointer" />
                 </Link>
               </div>

@@ -64,7 +64,7 @@ export function DisciplinaCadastro() {
 
             console.log('Disciplina cadastrada:', response.data);
             alert('Disciplina cadastrada com sucesso!');
-            navigate('/disciplina'); 
+            navigate('/disciplina-diretor'); 
         } catch (error) {
             console.error('Erro ao cadastrar disciplina:', error.response?.data || error.message);
             alert('Erro ao cadastrar disciplina.');

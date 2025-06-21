@@ -6,6 +6,14 @@ export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
+  const tipo = localStorage.getItem('cargo'); 
+
+
+    const linkDisciplina = tipo === 'P' ? '/disciplina-professor' : '/disciplina-diretor';   
+    const linkSala = tipo === 'P' ? '/erro' : '/salas'; 
+    const linkReserva = tipo === 'P' ? '/erro' : '/exibir-reserva'
+    const linkDiretor = tipo === 'P' ? '/erro' : '/diretores'; 
+
   function Logout(){
 
     localStorage.removeItem('access_token');
@@ -20,6 +28,7 @@ export function NavBar() {
     <header className="bg-white/90 text-black ">
       <div className="container mx-auto flex items-center justify-between h-24 px-4">
         {/* Logo */}
+         <Link to='/home'>
         <a href="#" className="flex items-center">
           <img
             className="h-16"
@@ -32,6 +41,7 @@ export function NavBar() {
             tecnologia
           </span>
         </a>
+        </Link>
 
         {/* Botão do menu mobile */}
         <div className="md:hidden">
@@ -50,13 +60,13 @@ export function NavBar() {
               <Link to="/sobre-nos" className="hover:text-blue-400 transition-colors">Sobre</Link>
             </li>
             <li>
-              <Link to="/salas" className="hover:text-blue-400 transition-colors">Salas</Link>
+              <Link to={linkSala} className="hover:text-blue-400 transition-colors">Salas</Link>
             </li>
             <li>
-              <Link to="/disciplinas" className="hover:text-blue-400 transition-colors">Disciplinas</Link>
+              <Link to={linkDisciplina} className="hover:text-blue-400 transition-colors">Disciplinas</Link>
             </li>
             <li>
-              <Link to="/" className="hover:text-blue-400 transition-colors">Reservas</Link>
+              <Link to={linkReserva} className="hover:text-blue-400 transition-colors">Reservas</Link>
             </li>
           </ul>
         </nav>
@@ -82,13 +92,13 @@ export function NavBar() {
               <Link to="/about" onClick={() => setIsOpen(false)}>Sobre</Link>
             </li>
             <li>
-              <Link to="/salas" onClick={() => setIsOpen(false)}>Salas</Link>
+              <Link to={linkSala} onClick={() => setIsOpen(false)}>Salas</Link>
             </li>
             <li>
-              <Link to="/products" onClick={() => setIsOpen(false)}>Disciplinas</Link>
+              <Link to={linkDisciplina} onClick={() => setIsOpen(false)}>Disciplinas</Link>
             </li>
             <li>
-              <Link to="/blog" onClick={() => setIsOpen(false)}>Reservas</Link>
+              <Link to={linkReserva} onClick={() => setIsOpen(false)}>Reservas</Link>
             </li>
             <li>
               <button

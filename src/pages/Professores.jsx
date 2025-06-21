@@ -59,7 +59,7 @@ export function Professores(){
     <div className="p-6">
         <h2 className="text-2xl font-bold mb-6">Professores</h2>
 
-        <Link to="/professor">
+        <Link to="/criar-professor">
             <Plus className="w-10 h-10 text-black-500 hover:text-blue-700 transition" />
         </Link>
 
@@ -78,7 +78,7 @@ export function Professores(){
                                 className="w-7 h-7 text-red-500 hover:text-red-700 transition cursor-pointer"
                                 onClick={() => handleDelete(item.id)}
                             />
-                            <Link to={`/editar/${item.id}`}>
+                            <Link to={`/editar-professor/${item.id}`}>
                                 <Edit className="w-7 h-7 text-blue-500 hover:text-blue-700 transition cursor-pointer" />
                             </Link>
                         </div>

@@ -9,13 +9,14 @@ import { Erro } from '../components/pagesComponents/Erro';
 import { Layout } from '../pages/Layout';
 
 import { About } from '../components/pagesComponents/About';
-import { Salas } from '../components/pagesComponents/Salas';
+import { Salas } from '../pages/Salas';
 import { PrivateRoute } from './PrivateRoute';
 import { DisciplineProfessor } from '../pages/DisciplinasProfessores';
 import { Disciplina } from '../pages/DisciplinaPrincipal';
 import { Professores } from '../pages/Professores';
 
 import { CriarProfessor } from '../pages/CrudProfessores/CriarProfessor';
+import { EditarProfessor } from '../pages/CrudProfessores/EditarProfessor';
 import { DisciplinaCadastro } from '../pages/CrudDisciplinas/CadastroDisciplina';
 import { EditarDisciplina } from '../pages/CrudDisciplinas/EditarDisciplina';
 import { CriarDiretor } from '../pages/CrudDiretores/CriarDiretor';
@@ -51,8 +52,9 @@ export function RoutesReact() {
 
             {/* Para usuarios: Cargo diretor e Professor */}
             <Route path='/professores' element={<Professores/>}/>
-            <Route path='/diretores' element={<Diretores />}/>
             <Route path='/criar-professor' element={<CriarProfessor/>}/>
+            <Route path='/editar-professor/:id' element={<EditarProfessor />}/>
+            <Route path='/diretores' element={<Diretores />}/>
             <Route path='/criar-diretor' element={<CriarDiretor/>}/>
             <Route path='/editar-diretor/:id' element={<EditarDiretor/>}/>
 

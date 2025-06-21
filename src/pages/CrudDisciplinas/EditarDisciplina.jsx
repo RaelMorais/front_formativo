@@ -73,7 +73,7 @@ export function EditarDisciplina() {
             });
 
             alert('Disciplina atualizada com sucesso!');
-            navigate('/disciplinas');
+            navigate('/disciplina-diretor');
 
         } catch (error) {
             console.error('Erro ao atualizar disciplina', error.response?.data || error);

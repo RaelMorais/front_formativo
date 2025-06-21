@@ -73,7 +73,7 @@ export function EditarReserva() {
       });
 
       alert("Reserva atualizada com sucesso!");
-      navigate("/reserva");
+      navigate("/exibir-reserva");
     } catch (error) {
       console.error("Erro ao atualizar reserva:", error.response?.data || error.message);
       alert("Erro ao atualizar reserva");

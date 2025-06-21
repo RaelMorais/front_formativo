@@ -65,7 +65,7 @@ export function CriarReserva() {
       );
 
       alert("Reserva criada com sucesso!");
-      navigate("/reserva"); // Ajuste para a rota que quiser
+      navigate("/exibir-reserva"); // Ajuste para a rota que quiser
     } catch (error) {
       console.error("Erro ao criar reserva:", error.response?.data || error.message);
       alert("Erro ao criar reserva");

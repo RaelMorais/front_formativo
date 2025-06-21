@@ -60,7 +60,7 @@ export function Diretores(){
     <div className="p-6">
         <h2 className="text-2xl font-bold mb-6">Diretores</h2>
         
-        <Link to="/diretor">
+        <Link to="/criar-diretor">
             <Plus className="w-10 h-10 text-black-500 hover:text-blue-700 transition" />
         </Link>
         
@@ -80,7 +80,7 @@ export function Diretores(){
                                 className="w-7 h-7 text-red-500 hover:text-red-700 transition cursor-pointer"
                                 onClick={() => handleDelete(item.id)}
                             />
-                            <Link to={`/editarDiretor/${item.id}`}>
+                            <Link to={`/editar-diretor/${item.id}`}>
                                 <Edit className="w-7 h-7 text-blue-500 hover:text-blue-700 transition cursor-pointer" />
                             </Link>
                         </div>

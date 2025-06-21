@@ -36,10 +36,8 @@ export function CriarDiretor() {
                     'Content-Type': 'application/json'
                 }
             });
-
-            console.log('Professor cadastrado:', response.data);
-            alert('Professor cadastrado com sucesso!');
-            navigate('/professores'); // ou a rota que desejar
+            alert('Diretor cadastrado com sucesso!');
+            navigate('/diretores'); // ou a rota que desejar
         } catch (error) {
             console.error('Erro ao cadastrar professor:', error.response?.data || error.message);
             alert('Erro ao cadastrar professor.');

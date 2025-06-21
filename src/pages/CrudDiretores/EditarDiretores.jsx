@@ -30,7 +30,6 @@ export function EditarDiretor() {
   });
 
   useEffect(() => {
-      console.log("ID do diretor:", id); // ✅ Deve exibir um número ou string válida
     async function carregarDados() {
       try {
         const token = localStorage.getItem('access_token');
@@ -69,7 +68,7 @@ export function EditarDiretor() {
       });
 
       alert('Diretor atualizado com sucesso!');
-      navigate('/adm');
+      navigate('/diretores');
 
     } catch (error) {
       console.error('Erro ao atualizar diretor:', error.response?.data || error);

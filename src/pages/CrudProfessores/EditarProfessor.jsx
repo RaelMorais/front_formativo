@@ -5,14 +5,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-const estilos = {
-    conteiner: "p-4",
-    titulo: "text-xl font-bold mb-4",
-    nomeCampo: "font-semibold mt-2",
-    inputField: "border p-2 rounded w-full",
-    error: "text-red-500 text-sm",
-    submitButton: "bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition mt-4"
-};
+
 
 const schemaProfessor = z.object({
     username: z.string().min(1, 'Informe o nome de usuário').max(150),
@@ -43,7 +36,7 @@ export function EditarProfessor() {
             try {
                 const token = localStorage.getItem('access_token');
 
-                const res = await axios.get(`http://127.0.0.1:8000/usuario/${id}/`, {
+                const res = await axios.get(`http://127.0.0.1:8000/usuario/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -63,7 +56,7 @@ export function EditarProfessor() {
         try {
             const token = localStorage.getItem('access_token');
 
-            await axios.put(`http://127.0.0.1:8000/usuario/${id}/`, data, {
+            await axios.put(`http://127.0.0.1:8000/usuario/${id}`, data, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -80,66 +73,71 @@ export function EditarProfessor() {
 
     return (
         <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md mt-10">
-            <form onSubmit={handleSubmit(onSubmit)} className={estilos.conteiner}>
-                <h2 className={estilos.titulo}>Editar Professor</h2>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <h2 className="text-2xl font-bold text-center mb-4">Editar Professor</h2>
 
-                <div>
-                    <label className={estilos.nomeCampo}>Nome de Usuário</label>
-                    <input {...register('username')} className={estilos.inputField} />
-                    {errors.username && <p className={estilos.error}>{errors.username.message}</p>}
-                </div>
-
-                <div>
-                    <label className={estilos.nomeCampo}>Telefone</label>
-                    <input {...register('telefone')} className={estilos.inputField} />
-                </div>
-
-                <div>
-                    <label className={estilos.nomeCampo}>Gênero</label>
-                    <select {...register('genero')} className={estilos.inputField}>
-                        <option value="">Selecione</option>
-                        <option value="M">Masculino</option>
-                        <option value="F">Feminino</option>
-                        <option value="N">Neutro</option>
-                    </select>
-                    {errors.genero && <p className={estilos.error}>{errors.genero.message}</p>}
-                </div>
-
-                <div>
-                    <label className={estilos.nomeCampo}>Situação</label>
-                    <select {...register('situacao')} className={estilos.inputField}>
-                        <option value="">Selecione</option>
-                        <option value="Ef">Efetivo</option>
-                        <option value="Es">Estágio</option>
-                        <option value="Mo">Meio-oficial</option>
-                        <option value="Ap">Aprendiz</option>
-                    </select>
-                    {errors.situacao && <p className={estilos.error}>{errors.situacao.message}</p>}
-                </div>
-
-                <div>
-                    <label className={estilos.nomeCampo}>Data de Nascimento</label>
-                    <input type="date" {...register('data_nasc')} className={estilos.inputField} />
-                    {errors.data_nasc && <p className={estilos.error}>{errors.data_nasc.message}</p>}
-                </div>
-
-                <div>
-                    <label className={estilos.nomeCampo}>Data de Contratação</label>
-                    <input type="date" {...register('data_contra')} className={estilos.inputField} />
-                    {errors.data_contra && <p className={estilos.error}>{errors.data_contra.message}</p>}
-                </div>
-
-                <div>
-                    <label className={estilos.nomeCampo}>Número de Identificação (NI)</label>
-                    <input {...register('ni')} className={estilos.inputField} />
-                    {errors.ni && <p className={estilos.error}>{errors.ni.message}</p>}
-                </div>
-
-                {/* Campo oculto para garantir cargo "P" */}
-                <input type="hidden" value="P" {...register('cargo')} />
-
-                <button type="submit" className={estilos.submitButton}>Atualizar</button>
-            </form>
+        <div>
+          <label className="block font-medium mb-1">Nome de Usuário</label>
+          <input {...register('username')} className="w-full border p-2 rounded" />
+          {errors.username && <p className="text-red-500 text-sm">{errors.username.message}</p>}
         </div>
+
+        <div>
+          <label className="block font-medium mb-1">Telefone</label>
+          <input {...register('telefone')} className="w-full border p-2 rounded" />
+        </div>
+
+        <div>
+          <label className="block font-medium mb-1">Gênero</label>
+          <select {...register('genero')} className="w-full border p-2 rounded">
+            <option value="">Selecione</option>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+            <option value="N">Neutro</option>
+          </select>
+          {errors.genero && <p className="text-red-500 text-sm">{errors.genero.message}</p>}
+        </div>
+
+        <div>
+          <label className="block font-medium mb-1">Situação</label>
+          <select {...register('situacao')} className="w-full border p-2 rounded">
+            <option value="">Selecione</option>
+            <option value="Ef">Efetivo</option>
+            <option value="Es">Estágio</option>
+            <option value="Mo">Meio-oficial</option>
+            <option value="Ap">Aprendiz</option>
+          </select>
+          {errors.situacao && <p className="text-red-500 text-sm">{errors.situacao.message}</p>}
+        </div>
+
+        <div>
+          <label className="block font-medium mb-1">Data de Nascimento</label>
+          <input type="date" {...register('data_nasc')} className="w-full border p-2 rounded" />
+          {errors.data_nasc && <p className="text-red-500 text-sm">{errors.data_nasc.message}</p>}
+        </div>
+
+        <div>
+          <label className="block font-medium mb-1">Data de Contratação</label>
+          <input type="date" {...register('data_contra')} className="w-full border p-2 rounded" />
+          {errors.data_contra && <p className="text-red-500 text-sm">{errors.data_contra.message}</p>}
+        </div>
+
+        <div>
+          <label className="block font-medium mb-1">Número de Identificação (NI)</label>
+          <input {...register('ni')} className="w-full border p-2 rounded" />
+          {errors.ni && <p className="text-red-500 text-sm">{errors.ni.message}</p>}
+        </div>
+
+        {/* Campo oculto para garantir cargo "P" */}
+        <input type="hidden" value="P" {...register('cargo')} />
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+        >
+          Atualizar
+        </button>
+      </form>
+    </div>
     );
 }

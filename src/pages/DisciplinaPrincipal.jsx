@@ -32,7 +32,7 @@ export function Disciplina() {
         })
     }, [])
      const handleDelete = (id) => {
-        const confirmar = window.confirm('Tem certeza que deseja excluir esta reserva?');
+        const confirmar = window.confirm('Tem certeza que deseja excluir esta disciplina?');
         if (!confirmar) return;
  
         const token = localStorage.getItem('access_token');
@@ -58,7 +58,7 @@ export function Disciplina() {
             <div className="p-6">
                 <h2 className="text-2xl font-bold mb-6">Disciplinas</h2>
                    
-                <Link to="/cadastro">
+                <Link to="/disciplina-cadastro">
                     <Plus className="w-10 h-10 text-black-500 hover:text-blue-700 transition"  />  
                 </Link>
 
@@ -74,7 +74,7 @@ export function Disciplina() {
                         >   <div className="flex justify-between mb-2">
                                 <Trash2 className="w-7 h-7 text-red-500 hover:text-red-700 transition" onClick={() => handleDelete(disciplina.id)}/>
                                 
-                                <Link to={`/editar/${disciplina.id}`}>                              
+                                <Link to={`/disciplina-editar/${disciplina.id}`}>                              
                                   <Edit className="w-7 h-7 text-blue-500 hover:text-blue-700 transition" />
                                 </Link>
                              
