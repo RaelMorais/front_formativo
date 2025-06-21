@@ -49,7 +49,7 @@ export function LoginReact() {
     // if (user && user.cargo) {
     //   localStorage.setItem('tipo', user.cargo);
     // }
-    navigate('/loading'); // ✅ redireciona após login
+    navigate('/home'); // ✅ redireciona após login
     console.log('Login realizado');
   } catch (error) {
     console.log('Deu ruim', error);
@@ -62,7 +62,7 @@ export function LoginReact() {
             {/* component */}
             <div className="bg-gray-100 flex justify-center items-center h-screen">
                 {/* Left: Image */}
-                <div className="w-1/2 h-screen hidden lg:block">
+                <div className="w-120 h-screen hidden lg:block">
                     <img
                         src="https://images.unsplash.com/photo-1712916666137-0ca605eeb88c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0"
                         alt="Background"
@@ -75,8 +75,8 @@ export function LoginReact() {
                     <h1 className="text-6xl font-semibold mb-4 text-center">Educar<span></span></h1>
                     <form action="#" method="POST" onSubmit={handleSubmit(ObterDados)}>
                         {/* Username Input */}
-                        <div className="mb-4">
-                            <label htmlFor="username" className="block text-gray-600">
+                        <div className="mb-4 flex flex-col">
+                            <label htmlFor="username" className="mr-2 text-gray-600">
                                 Username
                             </label>
                             <input
@@ -85,7 +85,7 @@ export function LoginReact() {
                                 type="text"
                                 id="username"
                                 name="username"
-                                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+                                className="w-full border border-gray-300 rounded-sm py-2 px-3 focus:outline-none focus:border-blue-500"
                                 autoComplete="off"
                             />
                             {errors.username && <p>{errors.username.message}</p>}
@@ -102,7 +102,7 @@ export function LoginReact() {
                                 type="password"
                                 id="password"
                                 name="password"
-                                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+                                className="w-full border border-gray-300 rounded-sm py-2 px-3 focus:outline-none focus:border-blue-500"
                                 autoComplete="off"
                             />
                             {errors.pasword && <p>{errors.pasword.message}</p>}

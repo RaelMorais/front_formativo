@@ -71,7 +71,7 @@ export function Disciplina() {
                         <div
                             key={disciplina.id}
                             className="bg-white shadow-md rounded-2xl p-4 border hover:shadow-lg transition-shadow"
-                        >   <div className=" flex flex-direction: row;">
+                        >   <div className="flex justify-between mb-2">
                                 <Trash2 className="w-7 h-7 text-red-500 hover:text-red-700 transition" onClick={() => handleDelete(disciplina.id)}/>
                                 
                                 <Link to={`/editar/${disciplina.id}`}>                              

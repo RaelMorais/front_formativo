@@ -1,4 +1,4 @@
-import { SectionAbout } from "./componets/SectionAbout";
+import { SectionAbout } from "./SectionAbout";
 export function About() {
   return (
     <>

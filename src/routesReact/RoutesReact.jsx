@@ -32,23 +32,34 @@ export function RoutesReact() {
         {/* Rotas protegidas com layout */}
         <Route element={<PrivateRoute />}>
           <Route element={<Layout />}>
+          {/* Navegação do sistema */}
             <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/salas" element={<Salas />} />
-            <Route path='/disciplina' element={<DisciplineProfessor/>}/>
-            <Route path='/disciplinas' element={<Disciplina />}/>
-            <Route path='/prof' element={<Professores/>}/>
+            <Route path="/sobre-nos" element={<About />} />
             <Route path='/erro' element={<Erro />} />
-            <Route path='/adm' element={<Diretores />}/>
             <Route path='/loading' element={<PencilLoader />}/>
-            <Route path='/cadastro' element={<DisciplinaCadastro/>}/>
-            <Route path='/editar/:id' element={<EditarDisciplina/>}/>
-            <Route path='/professor' element={<CriarProfessor/>}/>
-            <Route path='/diretor' element={<CriarDiretor/>}/>
-            <Route path='/editarDiretor/:id' element={<EditarDiretor/>}/>
-            <Route path='/reserva' element={<Reservas/>}/>
-            <Route path='/reservaCriar' element={<CriarReserva/>}/>
-            <Route path='/reservaEditar/:id' element={<EditarReserva/>}/>
+
+          {/* Para CRUD de salas, com diferenciação pelo cargo do usuario*/}
+            <Route path="/salas" element={<Salas />} />
+          
+          {/* Para CRUD de disciplina, com diferenciação pelo cargo do usuario */}
+            <Route path='/disciplina-professor' element={<DisciplineProfessor/>}/>
+            <Route path='/disciplina-diretor' element={<Disciplina />}/>
+            <Route path='/disciplina-cadastro' element={<DisciplinaCadastro/>}/>
+            <Route path='/disciplina-editar/:id' element={<EditarDisciplina/>}/>
+
+
+
+            {/* Para usuarios: Cargo diretor e Professor */}
+            <Route path='/professores' element={<Professores/>}/>
+            <Route path='/diretores' element={<Diretores />}/>
+            <Route path='/criar-professor' element={<CriarProfessor/>}/>
+            <Route path='/criar-diretor' element={<CriarDiretor/>}/>
+            <Route path='/editar-diretor/:id' element={<EditarDiretor/>}/>
+
+            {/* Para reservas, onde somente cargos ADM e D, podem realizar operações além do GET */}
+            <Route path='/exibir-reserva' element={<Reservas/>}/>
+            <Route path='/criar-reserva' element={<CriarReserva/>}/>
+            <Route path='/editar-reserva/:id' element={<EditarReserva/>}/>
           </Route>
         </Route>
       </Routes>

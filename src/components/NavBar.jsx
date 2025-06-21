@@ -16,13 +16,14 @@ export function NavBar() {
     navigate('/');
   }
   return (
-    <header className="bg-white/90 text-black shadow-lg">
+    // shadow-lg
+    <header className="bg-white/90 text-black ">
       <div className="container mx-auto flex items-center justify-between h-24 px-4">
         {/* Logo */}
         <a href="#" className="flex items-center">
           <img
             className="h-16"
-            src="https://i.ibb.co/6Yxs70d/2021-10-26-23h27-03.png"
+            src="https://images.vexels.com/media/users/3/224234/isolated/preview/ff7c525c1c3e1bef640644542001e1fd-logotipo-da-escola-online.png"
             alt="Logo"
           />
           <span className="ml-4 uppercase font-black leading-tight">
@@ -46,7 +47,7 @@ export function NavBar() {
               <Link to="/home" className="hover:text-blue-400 transition-colors">Home</Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-blue-400 transition-colors">Sobre</Link>
+              <Link to="/sobre-nos" className="hover:text-blue-400 transition-colors">Sobre</Link>
             </li>
             <li>
               <Link to="/salas" className="hover:text-blue-400 transition-colors">Salas</Link>
@@ -63,7 +64,7 @@ export function NavBar() {
         {/* Botão Logout - desktop */}
         <div className="hidden md:block">
           <button 
-          className="rounded-full font-bold px-8 py-2 hover:bg-red-700 hover:text-white transition"
+          className="rounded-md font-bold px-8 py-2 hover:bg-red-700 hover:text-white transition"
           onClick={Logout}>
             Logout
           </button>

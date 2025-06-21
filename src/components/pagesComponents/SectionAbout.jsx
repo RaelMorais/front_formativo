@@ -1,4 +1,4 @@
-import video_back from "../../../assets/videos/video.mp4";
+import video_back from "../../assets/videos/video.mp4";
 export function SectionAbout() {
   return (
     // Componente -> Section About Us

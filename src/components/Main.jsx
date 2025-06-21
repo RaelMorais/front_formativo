@@ -12,9 +12,9 @@ export function Main() {
 
     return (
         <>
-            <main className="flex flex-col items-center justify-center min-h-[80vh] bg-gray-200 px-4">
+            <main className="flex flex-col items-center justify-center min-h-[80vh] bg-gray-90 px-4">
                 <div className="flex flex-col items-start">
-                    <h1 className="text-2xl font-bold">Olá {name}</h1>
+                    <h1 className="text-2xl font-bold">Seja Bem Vindo, {name}!</h1>
                 </div>
 
                 <div className="w-full max-w-screen-xl">
