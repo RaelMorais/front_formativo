@@ -45,7 +45,7 @@ Em setting.py coloque a senha do seu úsuario do WorkBench em DATABASES:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'formativo_dorival',
+        'NAME': 'formativo',
         'USER': '#', # Usuario Workbench 
         'PASSWORD': '#', # Senha Workbench 
         'HOST': 'localhost',  # Mysql IP
