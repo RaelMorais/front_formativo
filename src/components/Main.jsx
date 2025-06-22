@@ -7,8 +7,8 @@ export function Main() {
 
 
     const linkDisciplina = tipo === 'P' ? '/disciplina-professor' : '/disciplina-diretor';   
-    const linkProfessor = tipo === 'P' ? '/erro' : '/professores'; 
-    const linkReserva = tipo === 'P' ? '/erro' : '/exibir-reserva'
+    const linkProfessor = tipo === 'P' ? '/usuarios-professor' : '/professores'; 
+    const linkReserva = tipo === 'P' ? '/reservas-professor' : '/exibir-reserva'
     const linkDiretor = tipo === 'P' ? '/erro' : '/diretores'; 
 
     return (

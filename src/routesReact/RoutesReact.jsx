@@ -11,7 +11,6 @@ import { Layout } from '../pages/Layout';
 import { About } from '../components/pagesComponents/About';
 import { Salas } from '../pages/Salas';
 import { PrivateRoute } from './PrivateRoute';
-import { DisciplineProfessor } from '../pages/DisciplinasProfessores';
 import { Disciplina } from '../pages/DisciplinaPrincipal';
 import { Professores } from '../pages/Professores';
 
@@ -24,6 +23,16 @@ import { EditarDiretor } from '../pages/CrudDiretores/EditarDiretores';
 import { Reservas } from '../pages/Reservas';
 import { CriarReserva } from '../pages/CrudReserva/CriarReserva';
 import { EditarReserva } from '../pages/CrudReserva/EditarReserva';
+
+import { CriarSala } from '../pages/CrudSala/CriarSala';
+import { EditarSala } from '../pages/CrudSala/EditarSala';
+
+// Visualização quando cargo for professor 
+import { DisciplineProfessor } from '../pages/Professores/DisciplinasProfessores';
+import { ReservasProfessor } from '../pages/Professores/AmbientesProfessor';
+import { SalaProfessor } from '../pages/Professores/SalaProfessor';
+import { UsuariosProfessor } from '../pages/Professores/UsuariosProfessor';
+
 export function RoutesReact() {
   return (
       <Routes>
@@ -41,9 +50,10 @@ export function RoutesReact() {
 
           {/* Para CRUD de salas, com diferenciação pelo cargo do usuario*/}
             <Route path="/salas" element={<Salas />} />
+            < Route path='/criar-sala' element={<CriarSala/>}/>
+            <Route path='/editar-sala/:id' element={<EditarSala/>}/>
           
           {/* Para CRUD de disciplina, com diferenciação pelo cargo do usuario */}
-            <Route path='/disciplina-professor' element={<DisciplineProfessor/>}/>
             <Route path='/disciplina-diretor' element={<Disciplina />}/>
             <Route path='/disciplina-cadastro' element={<DisciplinaCadastro/>}/>
             <Route path='/disciplina-editar/:id' element={<EditarDisciplina/>}/>
@@ -62,6 +72,14 @@ export function RoutesReact() {
             <Route path='/exibir-reserva' element={<Reservas/>}/>
             <Route path='/criar-reserva' element={<CriarReserva/>}/>
             <Route path='/editar-reserva/:id' element={<EditarReserva/>}/>
+
+
+            {/* View para somente visualização dos dados pelo usuario 'P' */}
+            <Route path='/reservas-professor' element={<ReservasProfessor/>}/>
+            <Route path='/salas-professor' element={<SalaProfessor/>}/>
+            <Route path='/usuarios-professor' element={<UsuariosProfessor/>}/>
+            <Route path='/disciplina-professor' element={<DisciplineProfessor/>}/>
+
           </Route>
         </Route>
       </Routes>

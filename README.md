@@ -25,6 +25,9 @@ Acesse: Local:  http://localhost:5173/
 
 Todo backend do projeto foi desenvolvido em Python, usando o DRF (Django Rest FrameWork), onde os endpoints são separados por funções necessarias para realizar operações, e usa o Token JWT para autenticação. 
 
+
+Para cadastrar informações, **crie um superusuario primeiro**
+
 # 🤔 Como iniciar o backend 
 
 Use: 
@@ -74,3 +77,9 @@ python manage.py runserver
 
 Para maiores dúvidas, [link do projeto aqui](https://github.com/RaelMorais/projeto_educar_back.git).
 
+# Melhorias futuras
+
+- Maior complexidade com a segurança e tratativa de erro, usuario 'P' consegue acesso as outras Urls
+- Organização maior do código, que graças ao tempo não deu para fazer e nem coementar direito 
+- Melhor desenvolvimento do código, otimizando variaveis 
+- Remover os consoles.log que foram usados para debugar o código ao longo do desenvolvimento 

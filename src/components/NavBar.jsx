@@ -10,9 +10,9 @@ export function NavBar() {
 
 
     const linkDisciplina = tipo === 'P' ? '/disciplina-professor' : '/disciplina-diretor';   
-    const linkSala = tipo === 'P' ? '/erro' : '/salas'; 
-    const linkReserva = tipo === 'P' ? '/erro' : '/exibir-reserva'
-    const linkDiretor = tipo === 'P' ? '/erro' : '/diretores'; 
+    const linkSala = tipo === 'P' ? '/salas-professor' : '/salas'; 
+    const linkReserva = tipo === 'P' ? '/reservas-professor' : '/exibir-reserva'
+    const linkDiretor = tipo === 'P' ? '/usuarios-professor' : '/diretores'; 
 
   function Logout(){
 
